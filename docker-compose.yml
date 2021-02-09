@@ -1,0 +1,30 @@
+version: "3"
+volumes:
+  db-data:
+services: 
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: "django-application"
+        ports: 
+            - "8080:8080"
+        volumes:
+            - ".:/Django-application/"
+        # 下二行は-itと同じ役割
+        tty: true
+        stdin_open: true
+        # environment:
+        #     - 'DATABASE_PASSWORD=postgres'
+        # depends_on: 
+        #     - db
+        # links: 
+        #     - db
+    
+    # db:
+    #     image: postgres
+    #     volumes:
+    #         - 'db-data:/var/lib/postgresql/data'
+        # environment:
+        #     - 'POSTGRES_USER=postgres'
+        #     - 'POSTGRES_PASSWORD=postgres'
