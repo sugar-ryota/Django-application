@@ -16,7 +16,7 @@ ADD requirements.txt /code
 RUN pip install -r requirements.txt
 
 # サーバーを立てる場所に移動
-WORKDIR /Django-application/first_project
+WORKDIR /Django-application/
 # これでbashとか使わずにrunするだけでサーバーが立つ
 CMD  python3 manage.py runserver 0:8080
 
