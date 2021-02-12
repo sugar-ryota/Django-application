@@ -18,5 +18,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app/',include('firstapp.urls')),
+    # path('app/',include('firstapp.urls')),
+    path('template_app/',include('firstapp.urls')) #templateの操作
 ]
